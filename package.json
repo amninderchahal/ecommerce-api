@@ -1,0 +1,83 @@
+{
+  "name": "ecommerce-api",
+  "version": "0.0.0",
+  "description": "description",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "start": "nodemon",
+    "prestart:prod": "rimraf dist && tsc",
+    "start:prod": "pm2 start ecosystem.config.js --env production",
+    "prestart:dev": "rimraf dist && tsc",
+    "start:dev": "pm2 start ecosystem.config.js",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^5.4.0",
+    "@nestjs/core": "^5.4.0",
+    "@nestjs/mongoose": "^5.2.2",
+    "@nestjs/swagger": "^3.1.0",
+    "@sendgrid/mail": "^6.3.1",
+    "@types/async": "^2.0.50",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.4",
+    "@types/ejs": "^2.6.0",
+    "@types/jsonwebtoken": "^8.3.0",
+    "async": "^2.6.1",
+    "bcryptjs": "^2.4.3",
+    "class-transformer": "^0.2.0",
+    "class-validator": "^0.9.1",
+    "cors": "^2.8.5",
+    "csv-parser": "^2.1.0",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.1",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.3.14",
+    "mongoose-delete": "^0.4.0",
+    "reflect-metadata": "^0.1.12",
+    "rimraf": "^2.6.2",
+    "rxjs": "^6.3.3",
+    "swagger-ui-express": "^4.0.7",
+    "typescript": "^3.0.1"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^5.1.0",
+    "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.1",
+    "@types/mongoose": "^5.3.2",
+    "@types/node": "^10.7.1",
+    "@types/supertest": "^2.0.5",
+    "jest": "^24.8.0",
+    "nodemon": "^1.18.3",
+    "prettier": "^1.14.2",
+    "supertest": "^3.1.0",
+    "ts-jest": "^23.1.3",
+    "ts-loader": "^4.4.2",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.5.0",
+    "tslint": "5.11.0",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
