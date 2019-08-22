@@ -66,7 +66,7 @@ export class ProductService {
     private getProductsFromDbWithPages(pageNumber: number, query: any): any {
         return this.getProductsFromDb(query)
             .limit(this.docsPerPage)
-            .skip(this.docsPerPage * pageNumber)
+            .skip(this.docsPerPage * (pageNumber - 1))
             .exec();
     }
 
